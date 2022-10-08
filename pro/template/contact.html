@@ -1,0 +1,30 @@
+{% extends 'theme.html' %}
+{% load static %}
+{% block content %}
+<style>
+      .a{ background-color:#f7adad;
+          text-align:center;
+          width:350px;
+          height:200px;
+          border-radius: 25px;
+         }
+</style>
+<body style="background-color:#bfbfbf;">
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<div class="a"><br>
+ <h3>
+<form action="message" method="POST">
+    {% csrf_token %}
+    Type here :<br><br><input type="text area" name="n1"><br><br>
+    <input class="btn btn-success" type="submit" value="POST">
+</form>
+ </h3>
+</div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+function g() {
+    var p=document.getElementById('a').value;
+    var q=document.getElementById('b').value;
+    var r=document.getElementById('c').value;
+    var s=document.getElementById('d').value;
+    var t=document.getElementById('e').value;
+    var u=document.getElementById('f').value;
+    var count=0;
+    if(p=="")
+    {
+    document.getElementById('g').innerText='Field is required';
+    count++;
+    }
+    if(q.length<8)
+    {
+    document.getElementById('h').innerText='password must contain 8 character';
+    count++;
+    }
+    if(r=="")
+    {
+    document.getElementById('i').innerText='Field is required';
+    count++;
+    }
+    if(s=="")
+    {
+    document.getElementById('j').innerText='Field is required';
+    count++;
+    }
+
+    if(t=="")
+    {
+    document.getElementById('k').innerText='Field is required';
+    count++;
+    }
+    var m=/(^[9876][0-9]{9}$)/;
+    if(!(u.match(m)))
+    {
+    document.getElementById('l').innerText='check the number is correct';
+    count++;
+    }
+    if(count==0)
+    {
+    return true;
+    }
+    else
+    {
+    return false;
+    }
+    }
+</script>
+    <style>
+    .a{
+        text-align:center;
+        top:100px;
+        width:350px;
+        height:340px;
+        border-radius: 25px;
+        background-color:#f7adad;
+       }
+        span{color:red;}
+    </style>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<title>REG</title>
+</head>
+<body style="background-color:#bfbfbf">
+<center>
+    <h1><p style="font-family:Georgia, serif">  CUSTOMER REGISTRATION </h1><br>
+<div class="a">
+    <br>
+    <form action="reg" method="POST" onsubmit="return g()">
+        {% csrf_token %}
+        <b>
+        USERNAME:<input type="text" name="n1" id="a"><br><span id="g"></span><br>
+        PASSWORD:<input type="password" name="n2" id="b"><br><span id="h"></span><br>
+        NAME:<input type="text" name="n3" id="c"><br><span id="i"></span><br>
+        AGE:<input type="text" name="n4" id="d"><br><span id="j"></span><br>
+        ADDRESS:<input type="text" name="n5" id="e"><br><span id="k"></span><br>
+        PHONE:<input type="text" name="n6" id="f"><br><span id="l"></span><br></b>
+        <input type="submit" class="btn btn-success" value="REGISTER"><br><br>
+
+    </form>
+</div>
+</center>
+</body>
+</html>

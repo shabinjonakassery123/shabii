@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .b{ background-color:#f7adad;
+            width:350px;
+            height:200px;
+            text-align:center;
+            border-radius: 25px;
+            }
+        #c {
+            background-color: #1c87c9;
+            -webkit-border-radius: 60px;
+            border-radius: 60px;
+            border: none;
+            color: #eeeeee;
+            cursor: pointer;
+            display: inline-block;
+            font-family:Georgia, serif;
+            font-size: 20px;
+            padding: 5px 15px;
+            text-align: center;
+            text-decoration: bold;
+        }
+      @keyframes glowing {
+        0% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+        50% {
+          background-color: #49e819;
+          box-shadow: 0 0 20px #49e819;
+        }
+        100% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+      }
+      #c {
+        animation: glowing 1300ms infinite;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <title>ADM LOG</title>
+</head>
+<body style="background-color:#bfbfbf">
+<center>
+    <h2 style="font-family:Georgia, serif">WELCOME TO ADMIN PANEL </h2>
+    <div class="b"><br><br>
+    <form action="admlog" method="POST">
+        {% csrf_token %}
+        USERNAME:<input type="text" name="n1"><br><br>
+        PASSWORD:<input type="text" name="n2"><br><br>
+        <input type="submit" value="LOGIN" id="c"><br><br>
+    </form>
+    </div>
+</center>
+</body>
+</html>

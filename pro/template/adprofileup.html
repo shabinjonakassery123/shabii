@@ -1,0 +1,15 @@
+{% extends 'admintemp.html' %}
+{% block content %}
+<center>
+  <br>  <br>
+  <br>
+    <form method="POST" action="adprup">
+    {% csrf_token %}
+    {% for i in a %}
+        <b><i> NAME:<input type="text" value="{{i.username}}" name="n1" contenteditable><br><br>
+         AGE:<input type="text" value="{{i.password}}" name="n2" contenteditable><br><br>
+        <input type="submit" class="btn btn-success" value="UPDATE"></i></b>
+    {% endfor %}
+</form>
+</center>
+{% endblock %}

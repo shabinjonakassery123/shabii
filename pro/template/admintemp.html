@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+.abs{
+  position:absolute;
+  right:0px;
+}
+
+.navbar {
+  position: fixed;
+  top:;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+<body style="background-color:#bfbfbf">
+<div class="navbar">
+  <a href="aa" class="active"> Employee </a>
+  <a href="bb"> Customer</a>
+  <a href="#"> EMP Decision</a>
+  <a href="dd"> Profile</a>
+  <a href="ee">Customer Message</a>
+  <div class="abs">
+  <a href="logoutemp"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+  </div>
+</div>
+{% block content%}
+<br><br><br>
+<center>
+<h2><p style="font-family:Georgia, serif">Welcome to admin panel...<br><br>
+    You can add delete update any data from here.....</p></h2></center>
+{% endblock %}
+
+</body>
+</html>

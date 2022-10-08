@@ -1,0 +1,23 @@
+{% extends 'admintemp.html' %}
+{% block content %}
+<center>
+  <br>  <br>
+  <br>
+    <form action="adcu" method="POST">
+        {% csrf_token %}
+        <input type="text" name="n1" placeholder="search name here">
+         <input type="submit" value="SEARCH" class="btn btn-primary">
+    </form>
+    <form method="POST" action="adcup2">
+    {% csrf_token %}
+    {% for i in as %}
+        <b><i> NAME:<input type="text" value="{{i.name}}" name="n1" contenteditable><br><br>
+         AGE:<input type="text" value="{{i.age}}" name="n2" contenteditable><br><br>
+         QUALIFICATION:<input type="text" value="{{i.address}}" name="n3" contenteditable><br><br>
+         PHONE:<input type="text" value="{{i.phone}}" name="n4" contenteditable><br><br>
+        <input type="submit" value="UPDATE"></i></b>
+    {% endfor %}
+</form>
+
+</center>
+{% endblock %}

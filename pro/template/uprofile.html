@@ -1,0 +1,38 @@
+{% extends 'theme.html' %}
+{% load static %}
+{% block content %}
+<style>
+      .a{ background-color:#f7adad;
+          text-align:center;
+          width:350px;
+          height:500px;
+          border-radius: 25px;
+         }
+</style>
+    <title>UPDATE PROFILE</title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body style="background-color:#bfbfbf;">
+<center>
+    <div class="a"><br>
+<form action="search" method="POST">
+    {% csrf_token %}
+    <h3><input type="text" name="n1" placeholder="search name here"><br><br>
+    <input type="submit" class="btn btn-success" value="search"></h3>
+</form><br><br><br>
+<form method="POST" action="update">
+    {% csrf_token %}
+    {% for i in s %}
+        <b><i> NAME:<input type="text" value="{{i.name}}" name="n1" contenteditable><br><br>
+         AGE:<input type="text" value="{{i.age}}" name="n2" contenteditable><br><br>
+         ADDRESS:<input type="text-feild" value="{{i.address}}" name="n3" contenteditable><br><br>
+         PHONE:<input type="text" value="{{i.phone}}" name="n4" contenteditable><br><br>
+        <input type="submit" class="btn btn-success" value="UPDATE"></i></b>
+    {% endfor %}
+</form>
+ </div>
+</center>
+{% endblock %}
